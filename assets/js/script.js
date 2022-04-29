@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     document.getElementById('heads').textContent = headsRolls;
-    document.getElementById('Heads-percent').textContent = percentHeads + '%'
+    document.getElementById('heads-percent').textContent = percentHeads + '%'
     document.getElementById('tails').textContent = tailsRolls;
     document.getElementById('tails-percent').textContent = percentTails + '%'
 })
@@ -53,9 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let percentTails = 0
 
     if (total > 0) {
-  
-    percentHeads = Math.round((headsRolls / total) * 100)
-    percentTails = Math.round((tailsRolls / total) * 100)
+        percentHeads = Math.round((headsRolls / total) * 100)
+        percentTails = Math.round((tailsRolls / total) * 100)
     }
 
 
