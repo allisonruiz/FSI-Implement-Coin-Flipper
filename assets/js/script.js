@@ -31,8 +31,8 @@ let total = headsRolls + tailsRolls;
         let percentTails = 0;
 
 if (total > 0) {
-        percentHeads = Math.round((headsRolls / total) * 100);
-        percentTails = Math.round((tailsRolls / total) * 100);
+        percentHeads = Math.round((headsRolls / total) * 100)
+        percentTails = Math.round((tailsRolls / total) * 100)
     }
 
     document.getElementById('heads').textContent = headsRolls;
