@@ -3,20 +3,29 @@ let headsRolls = 0
 let tailsRolls = 0
 
 document.addEventListener('DOMContentLoaded', function () {
-    // This is just a sanity check to make sure your JavaScript script is getting loaded
+    document.getElementById('flip').addEventListener('click', () => {
+        // Determine result using Math.random() which returns a value between 0 and 1
+        // Therefore, it has a 50% chance to be below 0.5
+        let flippedHeads = Math.random() < 0.5
 
-    const pennyButton = document.querySelector('#flip');
-    pennyButton.addEventListener('click', function(){
-        let headsFlip = Math.random() < 0.5;
-        if (headsFlip) {
-            document.getElementaryById('penny-image').src = 'assets/images/penny-heads.jpg';
-            document,getElementaryById('message').textContent = 'You Flipped Heads!';
-            numberOfHeads++;
-        } else {
-            document.getElementById('penny-image').src = 'assets/images/penny-tails.jpg';
-            document.getElementById('message').textContent = 'You Flipped Tails';
-            numberOfTails--;
+        // Take different actions for heads vs tails flipped
+        if (flippedHeads) {
+            // Display image and message as heads
+            document.getElementById('penny-image').src = 'assets/images/penny-heads.jpg'
+            document.getElementById('message').textContent = 'You Flipped Heads!'
+
+            // Add one to the count of number of heads flipped
+            headsRolls += 1
         }
+        else {
+            // Display image and message as tails
+            document.getElementById('penny-image').src = 'assets/images/penny-tails.jpg'
+            document.getElementById('message').textContent = 'You Flipped Tails!'
+
+            // Add one to the count of number of tails flipped
+            tailsRolls += 1
+        }
+
 let total = headsRolls + tailsRolls;
         let percentHeads = 0;
         let percentTails = 0;
@@ -31,11 +40,13 @@ if (total > 0) {
     document.getElementById('tails').textContent = tailsRolls;
     document.getElementById('tails-percent').textContent = percentTails + '%'
 })
-    document.getElementById('clear').addEventListener('click', function () {
+
+document.getElementById('clear').addEventListener('click', function () {
         headsRolls = 0
         tailsRolls = 0
 
-       document.getElementById('message').textContent = 'Let\'s Get Rolling!'
+    document.getElementById('message').textContent = 'Let\'s Get Rolling!'
+    
     let total = headsRolls + tailsRolls
 
     let percentHeads = 0
