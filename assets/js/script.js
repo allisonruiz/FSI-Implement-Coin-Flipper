@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
             tailsRolls += 1
         }
 
-let total = headsRolls + tailsRolls;
+    let total = headsRolls + tailsRolls;
         let percentHeads = 0;
         let percentTails = 0;
 
-if (total > 0) {
+    if (total > 0) {
         percentHeads = Math.round((headsRolls / total) * 100)
         percentTails = Math.round((tailsRolls / total) * 100)
     }
@@ -41,7 +41,7 @@ if (total > 0) {
     document.getElementById('tails-percent').textContent = percentTails + '%'
 })
 
-document.getElementById('clear').addEventListener('click', function () {
+    document.getElementById('clear').addEventListener('click', function () {
         headsRolls = 0
         tailsRolls = 0
 
@@ -56,7 +56,7 @@ document.getElementById('clear').addEventListener('click', function () {
   
     percentHeads = Math.round((headsRolls / total) * 100)
     percentTails = Math.round((tailsRolls / total) * 100)
-}
+    }
 
 
     document.getElementById('heads').textContent = headsRolls
